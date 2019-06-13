@@ -6,6 +6,7 @@ body {
 }
 
 .clock-face {
+    background: yellow;
     border: 10px solid blue;
     display: flex;
     width: 200px;
@@ -21,4 +22,11 @@ body {
     position: absolute;
     width: 50%;
     top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    transition-timing-function: ease-in-out;
+}
+
+.minute-hand, .hour-hand, .second-hand{
+    background: maroon;
 }
