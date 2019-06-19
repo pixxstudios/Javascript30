@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS variables</title>
     <style>    
+    :root {
+        --base: #ffc600;
+        --spacing: 10px;
+        --blur: 10px;
+    }
+
     body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: grey;
@@ -15,6 +21,9 @@
     img {
         margin-top: 20px;
         width: 700px;
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
     }
     </style>
 </head>
@@ -30,5 +39,22 @@
     <input type="color" name="base" value="#ffc600" />
 
     <img src="bb.jpg" />
+
+    <script>
+    var image  = document.querySelector('img');
+
+    function handleOnChange() {
+        var sizing = this.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${this.name}`, `${this.value}${sizing}`);
+    }
+
+    function init() {
+        var fields = document.querySelectorAll('input');
+        fields.forEach(field => field.addEventListener('change', handleOnChange));
+        fields.forEach(field => field.addEventListener('mousemove', handleOnChange));
+    }
+
+    init();
+    </script>
 </body>
 </html>
