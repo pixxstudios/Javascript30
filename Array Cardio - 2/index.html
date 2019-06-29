@@ -30,6 +30,10 @@
     const areAll19 = people.every(p => ((new Date).getFullYear())-p.year >= 19);
     console.log(areAll19);
 
+    // Array.prototype.find 
+    // find comment with id of 823423
+    const comment = comments.find(c => c.id === 823423);
+    console.table(comment);
     </script>
 </body>
 </html>
