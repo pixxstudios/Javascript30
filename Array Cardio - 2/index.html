@@ -21,6 +21,15 @@
       { text: 'Ramen is my fav food ever', id: 123523 },
       { text: 'Nice Nice Nice!', id: 542328 }
     ];
+
+    // 1. Array.prototype.some // Is atlest one person 19
+    const isOne19 = people.some(p => ((new Date()).getFullYear())-p.year >= 19);
+    console.log(isOne19);
+
+    // Array.prototype.every // Is everyone 19
+    const areAll19 = people.every(p => ((new Date).getFullYear())-p.year >= 19);
+    console.log(areAll19);
+
     </script>
 </body>
 </html>
